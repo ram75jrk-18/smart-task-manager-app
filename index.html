@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Task Management System</h1>
+      <p>Final submission demo with role-based access control, validations, and notifications.</p>
+    </header>
+
+    <section id="notification" class="notification hidden"></section>
+
+    <section class="card" id="loginSection">
+      <h2>Login</h2>
+      <div class="credentials-box">
+        <p><strong>Admin:</strong> admin@demo.com / admin123</p>
+        <p><strong>Member:</strong> member@demo.com / member123</p>
+      </div>
+      <form id="loginForm">
+        <div class="grid-2">
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="password" id="password" placeholder="Password" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section class="card hidden" id="dashboardSection">
+      <div class="dashboard-top">
+        <div>
+          <h2>Dashboard</h2>
+          <p id="welcomeText"></p>
+        </div>
+        <button id="logoutBtn" class="secondary">Logout</button>
+      </div>
+
+      <div id="taskFormSection" class="hidden">
+        <h3>Create Task (Admin Only)</h3>
+        <form id="taskForm">
+          <div class="grid-2">
+            <input type="text" id="title" placeholder="Task title" required />
+            <input type="text" id="assignedTo" placeholder="Assign to email" required />
+          </div>
+          <textarea id="description" placeholder="Task description" required></textarea>
+          <select id="priority">
+            <option value="High">High</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="Low">Low</option>
+          </select>
+          <button type="submit">Create Task</button>
+        </form>
+      </div>
+
+      <h3>Tasks</h3>
+      <div id="taskList" class="task-list"></div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
